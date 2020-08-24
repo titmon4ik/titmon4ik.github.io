@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Wicart ver2.0</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="themes/theme1.css" />
+	<link rel="stylesheet" type="text/css" href="js/wicart.js" />
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" ></script>
+	<!-- WI-JQ-HEADER -->
+	<script src="wicart.js"  type="text/javascript" ></script>
+	<!-- WI-HEADER -->
+	<style>
+	.v {border:1px solid #999; border-radius: 5px;padding: 10px;margin-bottom: 10px; width: 340px;}
+	</style>
+</head>
+<body background="images/depositphotos_97158556-stock-illustration-фон-бесшовные-серый-продукт-категории.jpg">
+<script>
+var priceList = {
+	"001" : {"id" : "001", "subid" : {}, "name" : "watermalon", "price" : "205"},
+	"002" : {"id" : "002", "subid" : {}, "name" : "cherry", "price" : "10"},
+	"004" : {"id" : "004", "subid" : {}, "name" : "byrry", "price" : "30"}
+	};
+</script>	
+
+
+
+
+
+<div class="cartname" >
+<h2><center>корзина</center></h2> </div>
+
+</div>
+
+<content>
+
+	 <nav class="menu">
+		<ul>
+		  <li><a href="carter.html">главна</a>
+		
+		
+			
+		
+		</li>
+		  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		  <li><a href="#"> каталог товаров</a>
+		  
+			<ul>
+				<div class="cart">
+					<div class="price"><a href="#" id="basketwidjet" onclick="cart.showWinow('bcontainer', 1)"></a></div>
+					<center><button class="bbutton" onclick="cart.showWinow('order', 1)">Оформить заказ</button></center>
+					<div class="clear"><div style="text-align: center"><a href="#!" onclick="cart.clearBasket()">oчистить корзину</a></div></div>
+					</div>
+				<div id="bcontainer" class="bcontainer" style="top: 200px; left: 8px;">         <div id="bsubject">корзина<a id="bclose" href="#" onclick="cart.closeWindow(&quot;bcontainer&quot;, 1);"><img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABpFBMVEUAAABEREBEREBEREBEREASEhEJCQgGBgYBAQEAAAAGBgUHBwYAAAAAAAADAwNEREBEREAJCQkICAcGBgYFBQUJCQgnJyVEREAICAgBAQEAAAAICAcAAAAAAAAAAAAJCQgAAAAGBgYBAQEQEA8NDQwHBwcBAQEMDAsSEhEJCQkBAQEBAQEBAQFAQDxEREBEREADAwIAAAABAQESEhEkJCIAAAAICAgAAAAQEA9EREAAAAATExIAAAAKCgkNDQwAAAAAAAABAQETExIHBwcDAwMDAwMTExIAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAADAwIAAAAGBgUBAQEWFhUAAAAAAAAHBwYBAQEVFRMDAwMHBwcUFBMWFhUBAQETExIAAAAAAAADAwMMDAsAAAAAAAASEhEAAAAUFBMAAAAJCQkrKygDAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAwMAAAAJCQgAAAAiIiABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQFEREAFBQUBAQEAAAAGBgYICAgHBwcBAQEJW8x2AAAAhXRSTlMAAQcIAjJ0kZqZnp+LaygNDxKw/v6wIwPY1A+upf4nenGWvXCg/Pubc8eSmLkcHxpW+vlhBr6hl3EDUl9pop5Q+fhe+1FPXVT8mlxfXWD9+1dbnPRRRved9ldI+Fhd+mBaVlSYWJN1V2dqwwVTA8ORvJXAknRzKii2rCjc3BUTqagrepgUbRZwswAAAAlwSFlzAAAASAAAAEgARslrPgAAAb1JREFUOMuNk2dTwkAQhpdiCZagotiwd5RYQeyKJdii2FDsvffeG0TJnza3lzg4kBnv0zt5NpvdZ3IA/zs6vUGv00wAxrj4hESGnERTkomk5JRU1swaFZ6WnhEMieSEgl9qsmRmWVWe/R2W8KkUjkw5uUr/vNhcEvPpLHEZGly0FYA8pb4wqMFFscioBzAU06lKSsvKKa+orKqmqYY1yB3smGvrHFx9A0mNTQ6uuQU7Oc1yB50Lc6uDc0ObXNHYTlIHfqmTJaZcmLvkpwDdPb19hAODkzjRlAuzpx93GhhEPsTjpF6gBTg1PyxnN4d8hHKJoQUhuhU/qvKxcWVTWmAPKlsLE5RP8qoJLND5vhQ/U9PIYWZWNcWgyTnFpH+ecoCFgNKTQZM+atK/qHI3txSg73gjTC6vIF9dw0nXhSiTG8g3eaEeJ92KMrlN+I4gSp5dkvaiTO4fAKwJ6PQQ4Og4wuQJ3fp070zZXzhJOafpAgsuQ2Gtf+4KC64tWtx2gybZW61/8g7QpPn+ITZ/fAI0yVqfX2wx+r8+gxVNkl3f3j+cnU4v3j4vSa73NwDrJ5qkt+f3Jv5N6u3Vvt0/UGcpYbC85ecAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTMtMDUtMThUMDY6MDM6MzEtMDU6MDALk1CfAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEzLTA1LTE4VDA2OjAzOjMxLTA1OjAwes7oIwAAAABJRU5ErkJggg=="></a></div>         <table id="bcaption"><tbody><tr><td>Название</td><td>Цена</td><td>кол-во</td><td>Всего</td><td></td></tr></tbody></table>         <div id="overflw"><table class="btable" id="btable"><tbody><tr class="bitem" id="wigoodline-ID001">                                             <td></td>                                             <td><a href="file:///C:/html/index.html#">watermalon</a></td>                                             <td id="lineprice_ID001" class="wigoodprice">205 руб.</td>                                             <td>                                             <div class="basket_num_buttons" id="minus_ID001">-</div>                                             <span class="basket_num" id="basket_num_ID001">4</span>                                             <div class="basket_num_buttons" id="plus_ID001">+</div></td>                                             <td id="linesum_ID001">820 руб.</td>                                             <td><a href="#" onclick="cart.delItem('ID001')"><img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABpFBMVEUAAABEREBEREBEREBEREASEhEJCQgGBgYBAQEAAAAGBgUHBwYAAAAAAAADAwNEREBEREAJCQkICAcGBgYFBQUJCQgnJyVEREAICAgBAQEAAAAICAcAAAAAAAAAAAAJCQgAAAAGBgYBAQEQEA8NDQwHBwcBAQEMDAsSEhEJCQkBAQEBAQEBAQFAQDxEREBEREADAwIAAAABAQESEhEkJCIAAAAICAgAAAAQEA9EREAAAAATExIAAAAKCgkNDQwAAAAAAAABAQETExIHBwcDAwMDAwMTExIAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAADAwIAAAAGBgUBAQEWFhUAAAAAAAAHBwYBAQEVFRMDAwMHBwcUFBMWFhUBAQETExIAAAAAAAADAwMMDAsAAAAAAAASEhEAAAAUFBMAAAAJCQkrKygDAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAwMAAAAJCQgAAAAiIiABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQFEREAFBQUBAQEAAAAGBgYICAgHBwcBAQEJW8x2AAAAhXRSTlMAAQcIAjJ0kZqZnp+LaygNDxKw/v6wIwPY1A+upf4nenGWvXCg/Pubc8eSmLkcHxpW+vlhBr6hl3EDUl9pop5Q+fhe+1FPXVT8mlxfXWD9+1dbnPRRRved9ldI+Fhd+mBaVlSYWJN1V2dqwwVTA8ORvJXAknRzKii2rCjc3BUTqagrepgUbRZwswAAAAlwSFlzAAAASAAAAEgARslrPgAAAb1JREFUOMuNk2dTwkAQhpdiCZagotiwd5RYQeyKJdii2FDsvffeG0TJnza3lzg4kBnv0zt5NpvdZ3IA/zs6vUGv00wAxrj4hESGnERTkomk5JRU1swaFZ6WnhEMieSEgl9qsmRmWVWe/R2W8KkUjkw5uUr/vNhcEvPpLHEZGly0FYA8pb4wqMFFscioBzAU06lKSsvKKa+orKqmqYY1yB3smGvrHFx9A0mNTQ6uuQU7Oc1yB50Lc6uDc0ObXNHYTlIHfqmTJaZcmLvkpwDdPb19hAODkzjRlAuzpx93GhhEPsTjpF6gBTg1PyxnN4d8hHKJoQUhuhU/qvKxcWVTWmAPKlsLE5RP8qoJLND5vhQ/U9PIYWZWNcWgyTnFpH+ecoCFgNKTQZM+atK/qHI3txSg73gjTC6vIF9dw0nXhSiTG8g3eaEeJ92KMrlN+I4gSp5dkvaiTO4fAKwJ6PQQ4Og4wuQJ3fp070zZXzhJOafpAgsuQ2Gtf+4KC64tWtx2gybZW61/8g7QpPn+ITZ/fAI0yVqfX2wx+r8+gxVNkl3f3j+cnU4v3j4vSa73NwDrJ5qkt+f3Jv5N6u3Vvt0/UGcpYbC85ecAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTMtMDUtMThUMDY6MDM6MzEtMDU6MDALk1CfAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEzLTA1LTE4VDA2OjAzOjMxLTA1OjAwes7oIwAAAABJRU5ErkJggg=="></a></td>                                             </tr><tr class="bitem" id="wigoodline-ID002">                                             <td></td>                                             <td><a href="file:///C:/html/index.html#">cherry</a></td>                                             <td id="lineprice_ID002" class="wigoodprice">10 руб.</td>                                             <td>                                             <div class="basket_num_buttons" id="minus_ID002">-</div>                                             <span class="basket_num" id="basket_num_ID002">1</span>                                             <div class="basket_num_buttons" id="plus_ID002">+</div></td>                                             <td id="linesum_ID002">10 руб.</td>                                             <td><a href="#" onclick="cart.delItem('ID002')"><img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABpFBMVEUAAABEREBEREBEREBEREASEhEJCQgGBgYBAQEAAAAGBgUHBwYAAAAAAAADAwNEREBEREAJCQkICAcGBgYFBQUJCQgnJyVEREAICAgBAQEAAAAICAcAAAAAAAAAAAAJCQgAAAAGBgYBAQEQEA8NDQwHBwcBAQEMDAsSEhEJCQkBAQEBAQEBAQFAQDxEREBEREADAwIAAAABAQESEhEkJCIAAAAICAgAAAAQEA9EREAAAAATExIAAAAKCgkNDQwAAAAAAAABAQETExIHBwcDAwMDAwMTExIAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAADAwIAAAAGBgUBAQEWFhUAAAAAAAAHBwYBAQEVFRMDAwMHBwcUFBMWFhUBAQETExIAAAAAAAADAwMMDAsAAAAAAAASEhEAAAAUFBMAAAAJCQkrKygDAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAwMAAAAJCQgAAAAiIiABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQFEREAFBQUBAQEAAAAGBgYICAgHBwcBAQEJW8x2AAAAhXRSTlMAAQcIAjJ0kZqZnp+LaygNDxKw/v6wIwPY1A+upf4nenGWvXCg/Pubc8eSmLkcHxpW+vlhBr6hl3EDUl9pop5Q+fhe+1FPXVT8mlxfXWD9+1dbnPRRRved9ldI+Fhd+mBaVlSYWJN1V2dqwwVTA8ORvJXAknRzKii2rCjc3BUTqagrepgUbRZwswAAAAlwSFlzAAAASAAAAEgARslrPgAAAb1JREFUOMuNk2dTwkAQhpdiCZagotiwd5RYQeyKJdii2FDsvffeG0TJnza3lzg4kBnv0zt5NpvdZ3IA/zs6vUGv00wAxrj4hESGnERTkomk5JRU1swaFZ6WnhEMieSEgl9qsmRmWVWe/R2W8KkUjkw5uUr/vNhcEvPpLHEZGly0FYA8pb4wqMFFscioBzAU06lKSsvKKa+orKqmqYY1yB3smGvrHFx9A0mNTQ6uuQU7Oc1yB50Lc6uDc0ObXNHYTlIHfqmTJaZcmLvkpwDdPb19hAODkzjRlAuzpx93GhhEPsTjpF6gBTg1PyxnN4d8hHKJoQUhuhU/qvKxcWVTWmAPKlsLE5RP8qoJLND5vhQ/U9PIYWZWNcWgyTnFpH+ecoCFgNKTQZM+atK/qHI3txSg73gjTC6vIF9dw0nXhSiTG8g3eaEeJ92KMrlN+I4gSp5dkvaiTO4fAKwJ6PQQ4Og4wuQJ3fp070zZXzhJOafpAgsuQ2Gtf+4KC64tWtx2gybZW61/8g7QpPn+ITZ/fAI0yVqfX2wx+r8+gxVNkl3f3j+cnU4v3j4vSa73NwDrJ5qkt+f3Jv5N6u3Vvt0/UGcpYbC85ecAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTMtMDUtMThUMDY6MDM6MzEtMDU6MDALk1CfAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEzLTA1LTE4VDA2OjAzOjMxLTA1OjAwes7oIwAAAABJRU5ErkJggg=="></a></td>                                             </tr></tbody></table></div>         <div id="bfooter"> <button class="bbutton" onclick="cart.showWinow('order', 1)">Оформить заказ</button><span id="bsum">830 руб.</span></div>         </div>
+					
+				
+				<li>
+			  </ul>
+	  </nav>
+		
+	
+	<div class="v">
+		<img class="im" src="images/7e60ab3ecd52108ed4c80a0a7d96cc41.jpg"        height="300" width="550" >
+		Цена: <span class="wicartprice" id="wicartprice_002">11</span> Руб.
+		
+		<button id="wicartbutton_002" onclick="cart.addToCart(this, '002', priceList['002'])">Купить</button>
+   </div>
+	
+				<div class="v">
+					<div><img class="im" src="images/Melon.jpg"  height="300" width="550" ></div>
+					Цена: <span class="wicartprice" id="wicartprice_002">11</span> Руб.
+					
+					<button id="wicartbutton_002" onclick="cart.addToCart(this, '002', priceList['002'])">Купить</button>
+			   </div>
+			
+		
+			   <div class="v">
+				<div><img class="im" src="images/nezhnost-opisanie-600x450.jpg"  height="300" width="550" ></div>
+				Цена: <span class="wicartprice" id="wicartprice_002">12</span> Руб.
+				
+				<button id="wicartbutton_002" onclick="cart.addToCart(this, '002', priceList['002'])">Купить</button>
+			</div>
+	
+	
+			<div class="v">
+				<div><img class="im" src="images/test-aubergine.png"  height="300" width="550" ></div>
+				Цена: <span class="wicartprice" id="wicartprice_002">13</span> Руб.
+				
+				<button id="wicartbutton_002" onclick="cart.addToCart(this, '002', priceList['002'])">Купить</button>
+			</div>
+	
+	
+	 <div class="v">
+				<div><img class="im" src="images/загружено.jfif"  height="300" width="550" ></div>
+				Цена: <span class="wicartprice" id="wicartprice_002">14</span> Руб.
+				
+				<button id="wicartbutton_002" onclick="cart.addToCart(this, '002', priceList['002'])">Купить</button>
+		   </div>
+		
+	
+		   <div class="v">
+			<div><img class="im" src="images/загружено (1).jfif"  height="300" width="550" ></div>
+			Цена: <span class="wicartprice" id="wicartprice_002">15</span> Руб.
+			
+			<button id="wicartbutton_002" onclick="cart.addToCart(this, '002', priceList['002'])">Купить</button>
+		</div>
+	
+	
+		
+		
+	
+	
+	
+			</content>
+
+
+
+
+
+	
+
+
+		
+
+		<footer><h3><center><a href="cart.html"> о нас</a></center></h3>	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+.v{
+	padding: 5px;
+padding-right: 15px;
+margin:  15px;
+float: left;
+    background-color: purple;
+	border: 1px solid black;
+	width: 30%;
+
+
+}
+
+.cartname{
+    background-color: skyblue;
+    border: 1px solid rgb(109, 27, 202);
+    color: slateblue;
+
+}
+
+.reklama{
+	
+	border: 1px solid black;
+	background-color: #f63;
+	float: right;
+	height: 960 px;
+	width: 370px;
+}
+}
+    
+
+
+.cart{
+	height: 1000px;
+	border: 1px solid rgb(109, 27, 202); 
+	background-color: skyblue;
+}
+
+
+
+
+
+
+.menu{
+	float: center;
+}
+
+.menu ul li{
+  padding: 10px;
+}
+.menu ul > li:hover{
+  background-color: #f96;
+}
+.menu ul ul > li:hover{
+  background-color: #69e;
+}
+.menu ul li, .menu ul{
+  display: inline-block;
+}
+.menu ul{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #f63;
+}
+.menu ul ul{
+  display: none;
+  position: absolute;
+  background-color: #369;
+  margin-top: 10px;
+  margin-left: -10px;
+}
+.menu ul a{
+  color: #fff;
+  text-decoration: none;
+}
+.menu ul ul a{
+  color: #fff;
+  text-decoration: none;
+}
+.menu li:hover ul{
+  display: block;
+}
+
+.menu li:hover li{
+  display: block;
+}
+
+
+footer {
+	position: absolute;
+	bottom: 1px;
+  width: 1840px;
+width: 100%;
+  height: 60px;
+  border: 1px solid rgb(109, 27, 202); 
+	background-color: skyblue;
+	color: slateblue;
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var cart;
+var config;
+var wiNumInputPrefID;
+/* WI-GLOBAL-VARS */
+$(document).ready(function(){  
+    cart = new WICard("cart");
+    config = {'clearAfterSend':true, 'showAfterAdd':false};
+    
+    cart.init("basketwidjet", config);
+    /* WI-MODULES */
+    
+    
+});	
+document.addEventListener('visibilitychange', function(e) {
+cart.init("basketwidjet", config);
+}, false);
+</script>
+<div id="blindLayer" class="blindLayer"></div>
+
+
+
+	
+
+
+</body>
+</html>
